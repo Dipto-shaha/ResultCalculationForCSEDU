@@ -1,0 +1,153 @@
+[
+    [
+        {
+            "id": "CSE-1101",
+            "course_code": "CSE-1101",
+            "course_name": "Fundamentals of Computers and Computing",
+            "credit": 2.0
+        },
+        {
+            "id": "CSE-1102",
+            "course_code": "CSE-1102",
+            "course_name": "Discrete Mathematics",
+            "credit": 3.0
+        },
+        {
+            "id": "EEE-1103",
+            "course_code": "EEE-1103",
+            "course_name": "Electrical Circuits",
+            "credit": 3.0
+        },
+        {
+            "id": "CHE-1104",
+            "course_code": "CHE-1104",
+            "course_name": "Chemistry",
+            "credit": 3.0
+        },
+        {
+            "id": "MATH-1105",
+            "course_code": "MATH-1105",
+            "course_name": "Differential and Integral Calculus",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-1111",
+            "course_code": "CSE-1111",
+            "course_name": "Fundamentals of Computers and Computing Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "EEE-1113",
+            "course_code": "EEE-1113",
+            "course_name": "Electrical Circuits Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CHE-1114",
+            "course_code": "CHE-1114",
+            "course_name": "Chemistry Lab",
+            "credit": 1.5
+        }
+    ],
+    [
+        {
+            "id": "CSE-1201",
+            "course_code": "CSE-1201",
+            "course_name": "Fundamentals of Programming",
+            "credit": 3.0
+        },
+        {
+            "id": "EEE-1202",
+            "course_code": "EEE-1202",
+            "course_name": "Digital Logic Design",
+            "credit": 3.0
+        },
+        {
+            "id": "PHY-1203",
+            "course_code": "PHY-1203",
+            "course_name": "Physics",
+            "credit": 3.0
+        },
+        {
+            "id": "MATH-1204",
+            "course_code": "MATH-1204",
+            "course_name": "Methods of Integration, Differential Equations, and Series",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-1211",
+            "course_code": "CSE-1211",
+            "course_name": "Fundamentals of Programming Lab",
+            "credit": 3.0
+        },
+        {
+            "id": "EEE-1212",
+            "course_code": "EEE-1212",
+            "course_name": "Digital Logic Design Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "PHY-1213",
+            "course_code": "PHY-1213",
+            "course_name": "Physics Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "ENG-1215",
+            "course_code": "ENG-1215",
+            "course_name": "Developing English Language Skills Lab",
+            "credit": 1.5
+        }
+    ],
+    [
+        {
+            "id": "CSE-2101",
+            "course_code": "CSE-2101",
+            "course_name": "Data Structures and Algorithms",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2102",
+            "course_code": "CSE-2102",
+            "course_name": "Object Oriented Programming",
+            "credit": 3.0
+        },
+        {
+            "id": "EEE-2103",
+            "course_code": "EEE-2103",
+            "course_name": "Electronic Devices and Circuit",
+            "credit": 3.0
+        },
+        {
+            "id": "GED-2104",
+            "course_code": "GED-2104",
+            "course_name": "Bangladesh Studies",
+            "credit": 2.0
+        },
+        {
+            "id": "MATH-2105",
+            "course_code": "MATH-2105",
+            "course_name": "Linear Algebra",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2111",
+            "course_code": "CSE-2111",
+            "course_name": "Data Structures and Algorithms Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-2112",
+            "course_code": "CSE-2112",
+            "course_name": "Object Oriented Programming Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "EEE-2113",
+            "course_code": "EEE-2113",
+            "course_name": "Electronic Devices and Circuits Lab",
+            "credit": 0.75
+        }
+    ]    
+    
+]
