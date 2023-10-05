@@ -1,10 +1,12 @@
+import { gradeToPoint } from './assets/utility/gradetoPoint';
 import './table.css';
 import PropTypes from 'prop-types';
 
-const SingleSemester = ({SemesterInfo}) => {
+const SingleSemester = ({SemesterInfo,resultinfo}) => {
     const handleGradeChange = () =>{
-        
+      
     }
+    console.log(SemesterInfo,resultinfo)
     return (
      <div className=' mb-10 w-full'>
          <table className=" w-full custom-table">
@@ -26,7 +28,7 @@ const SingleSemester = ({SemesterInfo}) => {
               <td>{item.credit}</td>
               <td>
                 <select
-                  value={item.grade}
+                   value={resultinfo[index]  }
                   onChange={(e) => handleGradeChange(e, item.id)}
                 >
                   <option value="Select">Select</option>
@@ -42,7 +44,7 @@ const SingleSemester = ({SemesterInfo}) => {
                   <option value="F">F</option>
                 </select>
               </td>
-              <td>fhhj</td>
+              <td>{gradeToPoint(resultinfo[index])}</td>
               { index==0 && <td rowSpan={SemesterInfo.length}> ifnfa</td>}
             </tr>
             
@@ -53,6 +55,7 @@ const SingleSemester = ({SemesterInfo}) => {
     );
 };
 SingleSemester.propTypes = {
-    SemesterInfo: PropTypes.object
-  };
+    SemesterInfo: PropTypes.object,
+    resultinfo:PropTypes.array
+};
 export default SingleSemester;

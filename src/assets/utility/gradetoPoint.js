@@ -1,3 +1,4 @@
+const cgpaRegex = /^(?:[0-3](?:\.[0-9]{1,2})?|4(?:\.00?)?|[0-3]\.|4\.)$/;
 function gradeToPoint(grade) {
    console.log(grade);
     switch (grade) {
@@ -73,4 +74,4 @@ function gradeToPoint(grade) {
         };
      }
   }
-  export {gradeToPoint,getGradeFromPoint,savetoLocalStorage,getfromLocalStorage};
+  export {gradeToPoint,getGradeFromPoint,savetoLocalStorage,getfromLocalStorage,cgpaRegex};

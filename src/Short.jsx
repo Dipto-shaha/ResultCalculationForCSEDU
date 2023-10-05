@@ -1,7 +1,7 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './table.css';
-import {  getfromLocalStorage, getGradeFromPoint, savetoLocalStorage } from './assets/utility/gradetoPoint';
+import {  getfromLocalStorage, getGradeFromPoint, cgpaRegex,savetoLocalStorage } from './assets/utility/gradetoPoint';
 import { useEffect, useState } from 'react';
 
 const Short = () => {
@@ -22,6 +22,7 @@ const Short = () => {
         setDataLoaded(false);
         const scgpa=parseFloat(event.target.value)
         const { data ,totalCredit} = shortresult;
+        const isCgpaValid = cgpaRegex.test(event.target.value);
         if(event.target.value==='')
         {
             let totalcgpa=0,usedcredit=0;
@@ -47,7 +48,7 @@ const Short = () => {
             console.log(shortresult);
             setDataLoaded(true);
         }
-        else if( scgpa <=4.00 &&  scgpa>=0.00 ){
+        else if(isCgpaValid ){
             let totalcgpa=0,usedcredit=0;
             const newgrade =getGradeFromPoint(scgpa);
             const newcgpa= event.target.value;
@@ -86,17 +87,26 @@ const Short = () => {
       };
     const handleExpectedCGPA =(e)=>{
         if(dataloaded){
-            const cgpa=parseFloat(e.target.value);
-            const {CGPA ,activatedCredit:usedCredit}=  shortresult;
-            console.log(cgpa,CGPA ,usedCredit);
-            const required= (cgpa*148-parseFloat(CGPA)*usedCredit)/(148-usedCredit);
-            if(required<=4.00)
+            const isCgpaValid = cgpaRegex.test(e.target.value);
+            console.log(isCgpaValid , "kdjfa")
+            if(isCgpaValid)
             {
-                const temp={expected:e.target.value,requiredCGPA:required.toFixed(2)};
-                setExpectedResult(temp);
+                const cgpa=parseFloat(e.target.value);
+                const {CGPA ,activatedCredit:usedCredit}=  shortresult;
+                console.log(cgpa,CGPA ,usedCredit);
+                const required= (cgpa*148-parseFloat(CGPA)*usedCredit)/(148-usedCredit);
+                if(required<=4.00)
+                {
+                    const temp={expected:e.target.value,requiredCGPA:required.toFixed(2)};
+                    setExpectedResult(temp);
+                }
+                else  toast("You Can't reach this CGPA");
             }
-            else  toast("You Can't reach this CGPA");
+            else 
+                toast("Please insert Correct Fomrate in bettween(0.00 to 4.00)");
+
         }
+
     }
     return (
         <>
