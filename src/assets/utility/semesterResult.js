@@ -1,20 +1,14 @@
-function setDetailsresult(data){
-    localStorage.removeItem('detailsResult');
-    localStorage.setItem('detailsResult',JSON.stringify(data))
+function setDetailsresult(data,id){
+    localStorage.removeItem(`detailsResult${id}`);
+    localStorage.setItem(`detailsResult${id}`,JSON.stringify(data))
 }
-function getDetailsresult(){
-    if(localStorage.getItem('detailsResult')) return JSON.parse(localStorage.getItem('detailsResult'));
+function getDetailsresult(id){
+    if(localStorage.getItem(`detailsResult${id}`)) return JSON.parse(localStorage.getItem(`detailsResult${id}`));
     else
     {
         return {
-           "1": ["A+","B-","B","C","D","A","D","B+"],
-           "2": [],
-           "3":[],
-           "4":[],
-           "5":[],
-           "6":[],
-           "7":[],
-           "8":[]
+           result: ["","","","","","","","","",""],
+           scgpa: 0.00
         };
     }
 

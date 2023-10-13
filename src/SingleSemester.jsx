@@ -1,12 +1,42 @@
+import { useState,useEffect } from 'react';
 import { gradeToPoint } from './assets/utility/gradetoPoint';
 import './table.css';
 import PropTypes from 'prop-types';
+import { getDetailsresult ,setDetailsresult} from './assets/utility/semesterResult';
 
-const SingleSemester = ({SemesterInfo,resultinfo}) => {
-    const handleGradeChange = () =>{
-      
+const SingleSemester = ({SemesterInfo,SemesterId}) => {
+    const [resultInfo,setResult]=useState({});
+    const [loaded,setLoad]=useState(false);
+    useEffect(()=>{
+      const fetchData = async () => {
+          const data = await getDetailsresult(SemesterId); 
+          setResult(data);
+          console.log(data);
+          setLoad(true);
+      };
+      fetchData();
+  },[]);
+    const handleGradeChange = (e,id) =>{
+      console.log("%cHendle Chnaged  is clicked","background-color:red");
+      let totalPoint =0,totalCredit=0;
+      const newData = resultInfo.result.slice(0,resultInfo.length).map((item,index) => {
+        if (index=== id) {
+          totalPoint = totalPoint+gradeToPoint(e.target.value)*SemesterInfo[id].credit;
+          totalCredit = totalCredit+SemesterInfo[id].credit
+          return e.target.value;
+        }
+        totalPoint = totalPoint+gradeToPoint(item)*SemesterInfo[id].credit;
+        totalCredit= totalCredit+SemesterInfo[id].credit;
+        return item;
+      });
+      let res= (totalPoint/totalCredit);
+      res= res.toFixed(2);
+      const data={result:newData,scgpa:res};
+      console.log("Data is",data);
+      setResult(data);
+      setDetailsresult(data,SemesterId);
     }
-    console.log(SemesterInfo,resultinfo)
+    //console.log(SemesterInfo,resultInfo)
     return (
      <div className=' mb-10 w-full'>
          <table className=" w-full custom-table">
@@ -20,7 +50,7 @@ const SingleSemester = ({SemesterInfo,resultinfo}) => {
             <th> SCPA </th>
           </tr>
         </thead>
-        <tbody >
+        {loaded && <tbody >
           {SemesterInfo.map((item,index) => (
             <tr key={item.id}>
               <td>{item.course_code}</td>
@@ -28,8 +58,8 @@ const SingleSemester = ({SemesterInfo,resultinfo}) => {
               <td>{item.credit}</td>
               <td>
                 <select
-                   value={resultinfo[index]  }
-                  onChange={(e) => handleGradeChange(e, item.id)}
+                   value={resultInfo?.result[index]  }
+                  onChange={(e) => handleGradeChange(e, index)}
                 >
                   <option value="Select">Select</option>
                   <option value="A+">A+</option>
@@ -44,18 +74,19 @@ const SingleSemester = ({SemesterInfo,resultinfo}) => {
                   <option value="F">F</option>
                 </select>
               </td>
-              <td>{gradeToPoint(resultinfo[index])}</td>
-              { index==0 && <td rowSpan={SemesterInfo.length}> ifnfa</td>}
+              <td>{gradeToPoint(resultInfo?.result[index])}</td>
+              
+              { index==0 && <td rowSpan={SemesterInfo.length}> {resultInfo.scgpa}</td>}
             </tr>
             
           ))}
-        </tbody>
+        </tbody>}
       </table>
      </div>
     );
 };
 SingleSemester.propTypes = {
-    SemesterInfo: PropTypes.object,
-    resultinfo:PropTypes.array
+    SemesterInfo: PropTypes.array,
+    SemesterId:PropTypes.number
 };
 export default SingleSemester;
