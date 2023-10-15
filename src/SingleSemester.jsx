@@ -4,7 +4,7 @@ import './table.css';
 import PropTypes from 'prop-types';
 import { getDetailsresult ,setDetailsresult} from './assets/utility/semesterResult';
 
-const SingleSemester = ({SemesterInfo,SemesterId}) => {
+const SingleSemester = ({SemesterInfo,SemesterId,setSideResult}) => {
     const [resultInfo,setResult]=useState({});
     const [loaded,setLoad]=useState(false);
     useEffect(()=>{
@@ -19,14 +19,14 @@ const SingleSemester = ({SemesterInfo,SemesterId}) => {
     const handleGradeChange = (e,id) =>{
       console.log("%cHendle Chnaged  is clicked","background-color:red");
       let totalPoint =0,totalCredit=0;
-      const newData = resultInfo.result.slice(0,resultInfo.length).map((item,index) => {
+      const newData = resultInfo.result.slice(0,SemesterInfo.length).map((item,index) => {
         if (index=== id) {
           totalPoint = totalPoint+gradeToPoint(e.target.value)*SemesterInfo[id].credit;
           totalCredit = totalCredit+SemesterInfo[id].credit
           return e.target.value;
         }
-        totalPoint = totalPoint+gradeToPoint(item)*SemesterInfo[id].credit;
-        totalCredit= totalCredit+SemesterInfo[id].credit;
+        totalPoint = totalPoint+gradeToPoint(item)*SemesterInfo[index].credit;
+        totalCredit= totalCredit+SemesterInfo[index].credit;
         return item;
       });
       let res= (totalPoint/totalCredit);
@@ -35,9 +35,11 @@ const SingleSemester = ({SemesterInfo,SemesterId}) => {
       console.log("Data is",data);
       setResult(data);
       setDetailsresult(data,SemesterId);
+      
     }
     //console.log(SemesterInfo,resultInfo)
     return (
+     <>
      <div className=' mb-10 w-full'>
          <table className=" w-full custom-table">
         <thead>
@@ -83,10 +85,15 @@ const SingleSemester = ({SemesterInfo,SemesterId}) => {
         </tbody>}
       </table>
      </div>
+     <div>
+
+     </div>
+     </>
     );
 };
 SingleSemester.propTypes = {
     SemesterInfo: PropTypes.array,
-    SemesterId:PropTypes.number
+    SemesterId:PropTypes.number,
+    setSideResult:PropTypes.func
 };
 export default SingleSemester;

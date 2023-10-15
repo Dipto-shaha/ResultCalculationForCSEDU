@@ -148,6 +148,261 @@
             "course_name": "Electronic Devices and Circuits Lab",
             "credit": 0.75
         }
-    ]    
-    
+    ],
+    [
+        {
+            "id": "CSE-2201",
+            "course_code": "CSE-2201",
+            "course_name": "Database Management Systems - I",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2202",
+            "course_code": "CSE-2202",
+            "course_name": "Design and Analysis of Algorithms - I",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2203",
+            "course_code": "CSE-2203",
+            "course_name": "Data and Telecommunication",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2204",
+            "course_code": "CSE-2204",
+            "course_name": "Computer Architecture and Organization",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-2205",
+            "course_code": "CSE-2205",
+            "course_name": "Introduction to Mechatronics",
+            "credit": 2.0
+        },
+        {
+            "id": "CSE-2211",
+            "course_code": "CSE-2211",
+            "course_name": "Database Management Systems - I Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-2212",
+            "course_code": "CSE-2212",
+            "course_name": "Design and Analysis of Algorithms - I Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-2213",
+            "course_code": "CSE-2213",
+            "course_name": "Data and Telecommunication Lab",
+            "credit": 0.75
+        },
+        {
+            "id": "CSE-2216",
+            "course_code": "CSE-2216",
+            "course_name": "Application Development Lab",
+            "credit": 1.5
+        }
+    ],
+    [
+        {
+            "id": "CSE-3101",
+            "course_code": "CSE-3101",
+            "course_name": "Computer Networking",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3102",
+            "course_code": "CSE-3102",
+            "course_name": "Software Engineering",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3103",
+            "course_code": "CSE-3103",
+            "course_name": "Microprocessor and Microcontroller",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3104",
+            "course_code": "CSE-3104",
+            "course_name": "Database Management Systems - II",
+            "credit": 3.0
+        },
+        {
+            "id": "MATH-3105",
+            "course_code": "MATH-3105",
+            "course_name": "Multivariable Calculus and Geometry",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3111",
+            "course_code": "CSE-3111",
+            "course_name": "Computer Networking Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-3112",
+            "course_code": "CSE-3112",
+            "course_name": "Software Engineering Lab",
+            "credit": 0.75
+        },
+        {
+            "id": "CSE-3113",
+            "course_code": "CSE-3113",
+            "course_name": "Microprocessor and Assembly Language Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-3116",
+            "course_code": "CSE-3116",
+            "course_name": "Microcontroller Lab",
+            "credit": 0.75
+        }
+    ],
+    [
+        {
+            "id": "CSE-3201",
+            "course_code": "CSE-3201",
+            "course_name": "Operating Systems",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3202",
+            "course_code": "CSE-3202",
+            "course_name": "Numerical Methods",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3203",
+            "course_code": "CSE-3203",
+            "course_name": "Design and Analysis of Algorithms - II",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3204",
+            "course_code": "CSE-3204",
+            "course_name": "Formal Language, Automata and Computability",
+            "credit": 3.0
+        },
+        {
+            "id": "STAT-3205",
+            "course_code": "STAT-3205",
+            "course_name": "Introduction to Probability and Statistics",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-3211",
+            "course_code": "CSE-3211",
+            "course_name": "Operating Systems Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-3212",
+            "course_code": "CSE-3212",
+            "course_name": "Numerical Methods Lab",
+            "credit": 0.75
+        },
+        {
+            "id": "CSE-3216",
+            "course_code": "CSE-3216",
+            "course_name": "Software Design Patterns Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "ENG-3217",
+            "course_code": "ENG-3217",
+            "course_name": "Technical Writing and Presentation Lab",
+            "credit": 0.75
+        }
+    ],
+    [
+        {
+            "id": "CSE-4101",
+            "course_code": "CSE-4101",
+            "course_name": "Artificial Intelligence",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4102",
+            "course_code": "CSE-4102",
+            "course_name": "Mathematical and Statistical Analysis for Engineers",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4XXX1",
+            "course_code": "CSE-4XXX1",
+            "course_name": "Option - I",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4XXX2",
+            "course_code": "CSE-4XXX2",
+            "course_name": "Option - II",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4111",
+            "course_code": "CSE-4111",
+            "course_name": "Artificial Intelligence Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-4XXX1Lab",
+            "course_code": "CSE-4XXX1Lab",
+            "course_name": "Option - I Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-4113",
+            "course_code": "CSE-4113",
+            "course_name": "Internet Programming Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-4114",
+            "course_code": "CSE-4114",
+            "course_name": "Project",
+            "credit": 2.0
+        }
+    ],
+    [
+        {
+            "id": "ECO-4201",
+            "course_code": "ECO-4201",
+            "course_name": "Economics",
+            "credit": 2.0
+        },
+        {
+            "id": "CSE-4202",
+            "course_code": "CSE-4202",
+            "course_name": "Society and Technology",
+            "credit": 2.0
+        },
+        {
+            "id": "CSE-4XXX3",
+            "course_code": "CSE-4XXX3",
+            "course_name": "Option - III",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4XXX4",
+            "course_code": "CSE-4XXX4",
+            "course_name": "Option - IV",
+            "credit": 3.0
+        },
+        {
+            "id": "CSE-4XXX3Lab",
+            "course_code": "CSE-4XXX3Lab",
+            "course_name": "Option - III Lab",
+            "credit": 1.5
+        },
+        {
+            "id": "CSE-4214",
+            "course_code": "CSE-4214",
+            "course_name": "Project",
+            "credit": 4.0
+        }
+    ]            
 ]
