@@ -2,16 +2,15 @@ import { useState,useEffect } from 'react';
 import { gradeToPoint } from './assets/utility/gradetoPoint';
 import './table.css';
 import PropTypes from 'prop-types';
-import { getDetailsresult ,setDetailsresult} from './assets/utility/semesterResult';
+import { getDetailsresult ,savedetalsAll,setDetailsresult} from './assets/utility/semesterResult';
 
-const SingleSemester = ({SemesterInfo,SemesterId,setSideResult}) => {
+const SingleSemester = ({SemesterInfo,SemesterId,setSideResult,sideResult}) => {
     const [resultInfo,setResult]=useState({});
     const [loaded,setLoad]=useState(false);
     useEffect(()=>{
       const fetchData = async () => {
           const data = await getDetailsresult(SemesterId); 
           setResult(data);
-          console.log(data);
           setLoad(true);
       };
       fetchData();
@@ -35,7 +34,17 @@ const SingleSemester = ({SemesterInfo,SemesterId,setSideResult}) => {
       console.log("Data is",data);
       setResult(data);
       setDetailsresult(data,SemesterId);
-      
+      const sidedata = sideResult.map(item=> { 
+          if(item.id==SemesterId+1)
+          {
+              const newSidedata = { ...item ,scgpa:res  };
+              return newSidedata;
+          }
+          return item;
+      })
+      setSideResult(sidedata);
+      console.log(sideResult);
+      savedetalsAll(sidedata);
     }
     //console.log(SemesterInfo,resultInfo)
     return (
@@ -94,6 +103,7 @@ const SingleSemester = ({SemesterInfo,SemesterId,setSideResult}) => {
 SingleSemester.propTypes = {
     SemesterInfo: PropTypes.array,
     SemesterId:PropTypes.number,
-    setSideResult:PropTypes.func
+    setSideResult:PropTypes.func,
+    sideResult:PropTypes.array
 };
 export default SingleSemester;
